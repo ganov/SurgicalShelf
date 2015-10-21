@@ -12,7 +12,7 @@ import play.mvc.Result;
 
 /**
  * Application Controller provide end-to-end Authentication.
- * SignUp / login /
+ * SignUp / login / logout
  */
 public class Application extends Controller {
 
