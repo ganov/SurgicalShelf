@@ -8,12 +8,17 @@ import play.data.Form;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
+import play.mvc.Security;
 
 /**
  * Application Controller provide end-to-end Authentication.
  * SignUp / login / logout
  */
 public class Application extends Controller {
+
+    public static Result index() {
+        return play.mvc.Results.TODO;
+    }
 
     public static Result signup() {
         Form<SignUpForm> signUpForm = Form.form(SignUpForm.class).bindFromRequest();
@@ -84,5 +89,4 @@ public class Application extends Controller {
         wrapper.put(type, msg);
         return wrapper;
     }
-
 }
