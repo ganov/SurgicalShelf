@@ -1,4 +1,4 @@
-package formModels;
+package models.formModels;
 
 import play.data.validation.Constraints;
 
@@ -6,8 +6,8 @@ import play.data.validation.Constraints;
  * UserForm Class
  * Created by ganovelli on 21/10/2015.
  */
-public class UserForm {
+public class SignUpForm extends UserForm {
     @Constraints.Required
-    @Constraints.Email
-    public String email;
+    @Constraints.MinLength(6)
+    public String password;
 }
