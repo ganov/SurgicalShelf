@@ -1,14 +1,6 @@
-////////
-// This sample is published as part of the blog article at www.toptal.com/blog
-// Visit www.toptal.com/blog and subscribe to our newsletter to read great posts
-////////
-
 package models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import java.io.UnsupportedEncodingException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -17,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import play.data.validation.Constraints;
 import play.db.ebean.Model;
+import utils.PasswordUtils;
 
 /**
  * Model representing a Blog user
@@ -41,7 +34,7 @@ public class User extends Model {
   public List<BlogPost> posts;
 
   public void setPassword(String password) {
-    this.shaPassword = getSha512(password);
+    this.shaPassword = PasswordUtils.getSha512(password);
   }
 
   public void setEmail(String email) {
@@ -55,7 +48,7 @@ public class User extends Model {
     return FIND
         .where()
         .eq("email", email.toLowerCase())
-        .eq("shaPassword", getSha512(password))
+        .eq("shaPassword", PasswordUtils.getSha512(password))
         .findUnique();
   }
 
@@ -64,14 +57,5 @@ public class User extends Model {
         .where()
         .eq("email", email.toLowerCase())
         .findUnique();
-  }
-
-  public static byte[] getSha512(String value) {
-    try {
-      return MessageDigest.getInstance("SHA-512").digest(value.getBytes("UTF-8"));
-    }
-    catch (NoSuchAlgorithmException|UnsupportedEncodingException e) {
-      throw new RuntimeException(e);
-    }
   }
 }
