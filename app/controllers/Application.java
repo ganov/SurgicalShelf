@@ -3,7 +3,6 @@ package controllers;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import models.formModels.LoginForm;
 import models.formModels.SignUpForm;
-import models.BlogPost;
 import models.User;
 import play.data.Form;
 import play.libs.Json;
@@ -76,18 +75,6 @@ public class Application extends Controller {
             wrapper.put("success", msg);
             return ok(wrapper);
         }
-    }
-
-    public static Result getPosts() {
-        return ok(Json.toJson(BlogPost.find.findList()));
-    }
-
-    public static Result getPost(Long id) {
-        BlogPost blogPost = BlogPost.findBlogPostById(id);
-        if (blogPost == null) {
-            return notFound(buildJsonResponse("error", "Post not found"));
-        }
-        return ok(Json.toJson(blogPost));
     }
 
     public static ObjectNode buildJsonResponse(String type, String message) {
