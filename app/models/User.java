@@ -48,11 +48,11 @@ public class User extends Model {
     this.email = email.toLowerCase();
   }
 
-  public static final Finder<Long, User> find = new Finder<Long, User>(
+  public static final Finder<Long, User> FIND = new Finder<>(
       Long.class, User.class);
 
   public static User findByEmailAndPassword(String email, String password) {
-    return find
+    return FIND
         .where()
         .eq("email", email.toLowerCase())
         .eq("shaPassword", getSha512(password))
@@ -60,7 +60,7 @@ public class User extends Model {
   }
 
   public static User findByEmail(String email) {
-    return find
+    return FIND
         .where()
         .eq("email", email.toLowerCase())
         .findUnique();
@@ -70,10 +70,7 @@ public class User extends Model {
     try {
       return MessageDigest.getInstance("SHA-512").digest(value.getBytes("UTF-8"));
     }
-    catch (NoSuchAlgorithmException e) {
-      throw new RuntimeException(e);
-    }
-    catch (UnsupportedEncodingException e) {
+    catch (NoSuchAlgorithmException|UnsupportedEncodingException e) {
       throw new RuntimeException(e);
     }
   }
