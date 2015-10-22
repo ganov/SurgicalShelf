@@ -1,0 +1,35 @@
+@(title: String, scripts: Html = Html(""), stylesheets: Html = Html(""))(content: Html)
+<!DOCTYPE html>
+
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>@title - </title>
+        <link rel="stylesheet" media="screen, print" href="@routes.WebJarAssets.at(WebJarAssets.locate("bootstrap.min.css"))" />
+        <link rel="stylesheet" href="@routes.WebJarAssets.at(WebJarAssets.locate("font-awesome.min.css"))" />
+        <link rel="stylesheet" href="@routes.WebJarAssets.at(WebJarAssets.locate("animate.min.css"))" />
+        <link rel="stylesheet" media="screen, print" href="@routes.Assets.versioned("stylesheets/main.css")" />
+
+        @stylesheets
+
+    </head>
+    <body>
+        @***
+        @navbar(menu)
+        ***@
+        <div class="container">
+        @content
+        </div>
+
+            <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/javascript" src='@routes.Application.javascriptRoutes'></script>
+        <script type='text/javascript' src="@routes.WebJarAssets.at(WebJarAssets.locate("jquery.min.js"))"></script>
+        <script type='text/javascript' src="@routes.WebJarAssets.at(WebJarAssets.locate("modernizr.min.js"))"></script>
+        <script type='text/javascript' src="@routes.WebJarAssets.at(WebJarAssets.locate("bootstrap.min.js"))"></script>
+        <script type='text/javascript' src='@routes.Assets.versioned("javascripts/main.js")'></script>
+        @scripts
+    </body>
+</html>

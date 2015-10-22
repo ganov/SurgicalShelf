@@ -2,14 +2,22 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-GET         /                       controllers.Application.index
+GET         /                                 controllers.Application.index
 
 # Home page
-POST        /signup                 controllers.Application.signup
-POST        /login                  controllers.Application.login
-GET         /logout                 controllers.Application.logout
-GET         /isauthenticated        controllers.Application.isAuthenticated
+POST        /signup                           controllers.Application.signup
+POST        /login                            controllers.Application.login
+GET         /logout                           controllers.Application.logout
+GET         /isauthenticated                  controllers.Application.isAuthenticated
 
-# Map static resources from the /public folder to the /assets URL path
-GET         /assets/*file               controllers.Assets.at(path="/public", file)
+# JSRouting
+GET         /assets/javascripts/routes        controllers.Application.javascriptRoutes()
 
+# Versioned Assets
+GET         /vassets/*file          controllers.Assets.versioned(path="/public", file: Asset)
+
+# Unversioned Assets
+GET         /assets/*file           controllers.Assets.at(path="/public", file)
+
+# WebJars
+GET         /webjars/*file          controllers.WebJarAssets.at(file)
