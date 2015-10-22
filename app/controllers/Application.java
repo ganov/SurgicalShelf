@@ -4,19 +4,25 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import models.formModels.LoginForm;
 import models.formModels.SignUpForm;
 import models.User;
+import play.Routes;
 import play.data.Form;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
+import views.html.index;
 
 /**
- * Application Controller provide end-to-end Authentication.
- * SignUp / login / logout
+ * Main Application Controller.
  */
 public class Application extends Controller {
 
+    /**
+     * Index : return home page.
+     *
+     * @return Page d'acceuil.
+     */
     public static Result index() {
-        return play.mvc.Results.TODO;
+        return ok(index.render());
     }
 
     public static Result signup() {
@@ -81,6 +87,23 @@ public class Application extends Controller {
         }
     }
 
+
+    /**
+     * Router javascript.
+     *
+     * @return javascript's router
+     */
+    public static Result javascriptRoutes() {
+        response().setContentType("text/javascript");
+        return ok(
+                Routes.javascriptRouter("jsRoutes",""
+                       //controllers.xxx.p.routes.javascript.InsurgController.listAsJson(),
+                       //controllers.xxx.p.routes.javascript.InsurgController.listAsJson()
+                       )
+        );
+    }
+
+    //TODO : Externalize via utils/JsonUtils
     public static ObjectNode buildJsonResponse(String type, String message) {
         ObjectNode wrapper = Json.newObject();
         ObjectNode msg = Json.newObject();
