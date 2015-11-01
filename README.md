@@ -5,5 +5,10 @@ An interactive storage helper tool to make easy preparation of operating room's 
 
 Resources
 ---------
-Clone from https://github.com/dsinyakov/angularjs-play-blog-app
-and make Server and Client Parts one unique Play-angularJS app.
+- Draw on https://github.com/dsinyakov/angularjs-play-blog-app 
+to make Server and Client Parts become one unique Play-angularJS app.
+
+- Inspired from https://github.com/mariussoutier/PlayBasics, especially with : 
+    * Angular projet : (Example application for Play+AngularJS+RequireJS.)
+    to make WebJars, requireJs and Play Jsroutes work's together... Rocks! ^^
+    * AngularJS-Auth project : (AngularJS + Play + Security)

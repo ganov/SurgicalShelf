@@ -87,22 +87,6 @@ public class Application extends Controller {
         }
     }
 
-
-    /**
-     * Router javascript.
-     *
-     * @return javascript's router
-     */
-    public static Result javascriptRoutes() {
-        response().setContentType("text/javascript");
-        return ok(
-                Routes.javascriptRouter("jsRoutes",""
-                       //controllers.xxx.p.routes.javascript.InsurgController.listAsJson(),
-                       //controllers.xxx.p.routes.javascript.InsurgController.listAsJson()
-                       )
-        );
-    }
-
     //TODO : Externalize via utils/JsonUtils
     public static ObjectNode buildJsonResponse(String type, String message) {
         ObjectNode wrapper = Json.newObject();
