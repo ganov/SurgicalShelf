@@ -23,13 +23,17 @@ libraryDependencies ++= Seq(
   // Font Awesome
   "org.webjars" % "font-awesome" % "4.4.0",
   //animate CSS Kool effect JQuery
-  "org.webjars" % "animate.css" % "3.3.0"
+  "org.webjars" % "animate.css" % "3.3.0",
+  // Jquery
+  "org.webjars" % "jquery" % "1.11.3",
+  // RequireJS
+  "org.webjars" % "requirejs" % "2.1.20"
 )
 
 LessKeys.compress in Assets := true
 
 pipelineStages := Seq(digest, gzip)
 
-includeFilter in (Assets, LessKeys.less) := "*.less"
+includeFilter in(Assets, LessKeys.less) := "*.less"
 
 lazy val root = (project in file(".")).enablePlugins(PlayJava)
