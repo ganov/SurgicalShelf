@@ -1,5 +1,18 @@
 @main("Index") {
     <div class="jumbotron">
-        <h1>requirejs : insert jquery Lib</h1>
+        <div data-ng-controller="LoginCtrl" data-ng-cloak>
+            <div data-ng-switch="loggedIn">
+                <div data-ng-switch-when="false">
+                    <form>
+                        <input type="text" data-ng-model="credentials.email" placeholder="User email" /><br />
+                        <input type="text" data-ng-model="credentials.password" placeholder="Password" /><br />
+                        <button data-ng-click="login(credentials)">Log In</button>
+                    </form>
+                </div>
+                <div data-ng-switch-when="true">
+                    Welcome, {{user.firstName}} {{user.lastName}}!
+                </div>
+            </div>
+        </div>
     </div>
 }
