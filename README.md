@@ -5,7 +5,7 @@ An interactive storage helper tool to make easy preparation of operating room's 
 
 Resources
 ---------
-- Draw on https://github.com/dsinyakov/angularjs-play-blog-app 
+- Drawn on https://github.com/dsinyakov/angularjs-play-blog-app 
 to make Server and Client Parts become one unique Play-angularJS app.
 
 - Inspired from https://github.com/mariussoutier/PlayBasics, especially with : 
