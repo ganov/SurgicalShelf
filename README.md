@@ -1,14 +1,16 @@
-SurgicalShelf
-=============
+PlayAngularSeed
+===============
 
-An interactive storage helper tool to make easy preparation of operating room's (operating theater).
+an another Play framework / AngularJs Seed.
 
-Resources
----------
-- Drawn on https://github.com/dsinyakov/angularjs-play-blog-app 
-to make Server and Client Parts become one unique Play-angularJS app.
-
-- Inspired from https://github.com/mariussoutier/PlayBasics, especially with : 
-    * Angular projet : (Example application for Play+AngularJS+RequireJS.)
-    to make WebJars, requireJs and Play Jsroutes work's together... Rocks! ^^
-    * AngularJS-Auth project : (AngularJS + Play + Security)
+Using : 
+     - webjars-play 2.3.0-3
+     - angularjs 1.4.7
+     - angular-ui-bootstrap 0.14.0
+     - modernizr 2.8.3
+     - normalize.css 3.0.2
+     - bootstrap 3.3.5
+     - font-awesome 4.4.0
+     - animate.css 3.3.0
+     - jquery 1.11.3
+     - requirejs 2.1.20 

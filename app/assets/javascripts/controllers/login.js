@@ -1,15 +1,9 @@
-/**
- * Created by ganovelli on 01/11/2015.
- */
 define(["angular"], function(angular) {
     "use strict";
 
     return {
         LoginCtrl: function($scope, playRoutes) {
-            $scope.credentials = {};
-            $scope.user = {};
-            $scope.loggedIn = false;
-
+            /*PlayRoutes' usage example
             $scope.login = function(credentials) {
                 console.log("about to post Credentials: " + credentials);
                 playRoutes.controllers.Application.login().post(credentials).then(function(response) {
@@ -20,7 +14,7 @@ define(["angular"], function(angular) {
                     $scope.loggedIn = true;
                     $scope.user = response.data;
                 });
-            };
+            };*/
         }
     };
 

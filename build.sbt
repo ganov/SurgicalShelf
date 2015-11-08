@@ -1,4 +1,4 @@
-name := """SurgicalShelf"""
+name := """PlayAngularSeed"""
 
 version := "1.0-SNAPSHOT"
 
