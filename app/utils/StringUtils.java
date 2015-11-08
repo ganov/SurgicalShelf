@@ -2,7 +2,6 @@ package utils;
 
 /**
  * StringUtils Class help to deal with strings
- * Created by ganovelli on 21/10/2015.
  */
 public final class StringUtils {
 

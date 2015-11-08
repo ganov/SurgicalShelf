@@ -16,7 +16,7 @@ public class JavaScript extends Controller {
     public static Result jsRoutes() {
         response().setContentType("text/javascript");
         return ok(
-                Routes.javascriptRouter("jsRoutes", controllers.routes.javascript.Application.login())
+                /*For Ex.: Routes.javascriptRouter("jsRoutes", controllers.routes.javascript.Application.login())*/
         );
     }
 }
