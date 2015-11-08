@@ -18,6 +18,8 @@ libraryDependencies ++= Seq(
   "org.webjars" % "modernizr" % "2.8.3",
   //html5shiv
   "org.webjars" % "html5shiv" % "3.7.3",
+  //normalize
+  "org.webjars" % "normalize.css" % "3.0.2",
   // Twitter Bootstrap
   "org.webjars" % "bootstrap" % "3.3.5",
   // Font Awesome
